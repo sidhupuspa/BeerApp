@@ -1,0 +1,30 @@
+<div class="container displayrandombeer">
+  <div class="row">
+    <div class="col-2">
+      <div class="row m-2">
+        <img src="{{ beer?.imageUrl }}" alt="{{ beer?.name }}" class="img-thumbnail" />
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="row m-3">
+        <div>
+          <h3>{{ beer?.name }}</h3>
+        </div>
+        <div>
+          <p>{{ beer?.description }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-2 pt-2">
+      <div class="row pt-2 pr-2">
+        <button class="btn btn-danger btn-block" id="idBtnAlcholicBeer" (click)="getRandomBears()">choose another
+          Beer</button>
+      </div>
+      <div class="row pt-4 pr-2">
+        <button class="btn btn-danger btn-block" id="idBtnNonAlcholicBeer" (click)="getRandomNonAlcoholicBeer()">
+          choose non-alcholic Beer
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

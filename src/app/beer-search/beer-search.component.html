@@ -1,0 +1,39 @@
+<div class="container mt-5 margin-search">
+  <form (ngSubmit)="onSubmit(formRef)" #formRef="ngForm">
+    <div class="form-row col-12">
+      <div class="col-4">
+        <div class="input-group">
+          <input class="form-control border-secondary py-2" type="search" value="search" name="beername"
+            [(ngModel)]="beername" id="beername" #name="ngModel" required [pattern]="unamePattern" />
+          <div class="input-group-append">
+            <button class="btn btn-outline-danger" type="submit" [disabled]="!formRef.valid">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+        </div>
+        <div *ngIf="name.errors?.pattern" class="alert alert-danger mt-5">
+          please enter a valid name
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="custom-control custom-radio custom-control-inline">
+
+          <div class="radio" *ngFor="let option of options | keyvalue">
+            <label>
+              <input type="radio" class="ml-2" name="filter" [(ngModel)]="selectedFilterType" [value]="option.key"
+                required>{{option.value}}
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="row">
+          <button class="btn btn-danger btn-block" type="submit" [disabled]="!formRef.valid">
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</div>

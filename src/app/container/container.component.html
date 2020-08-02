@@ -1,0 +1,15 @@
+<div>
+  <app-random-beer-section></app-random-beer-section>
+  <app-beer-search> </app-beer-search>
+  <div class="autoScroll container">
+    <div *ngFor="let beer of beers">
+      <app-beer-details [beer]="beer"></app-beer-details>
+
+
+    </div>
+    <div *ngIf="isNoDataFound" class="mt-5">
+      <span class="alert alert-danger">Kindly search with differnt text.No Data found.</span>
+    </div>
+  </div>
+
+</div>
